@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primaria - Lógica de Programación</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <main class="content-container">
+        <section class="introduction">
+            <h1>Lógica de Programación - Primaria</h1>
+            <p>Explora los conceptos básicos de la lógica de programación a través de secuencias, comparaciones y condicionales. Cada sección incluye ejemplos interactivos que te ayudarán a comprender mejor cada tema.</p>
+        </section>
+
+        <section class="concept" id="secuencias">
+            <h2>Secuencias</h2>
+            <p>Una secuencia es una serie de números u objetos organizados según una regla o patrón específico. En programación, comprender secuencias es esencial para desarrollar algoritmos y resolver problemas de manera lógica.</p>
+
+            <div class="example">
+                <h3>Ejemplo 1</h3>
+                <p>¿Qué número sigue en la secuencia: 2, 4, 6, ...?</p>
+                <div class="options">
+                    <label><input type="radio" name="q1" value="6"> 6</label>
+                    <label><input type="radio" name="q1" value="8"> 8</label>
+                    <label><input type="radio" name="q1" value="10"> 10</label>
+                </div>
+                <button type="button" onclick="verificarRespuesta('q1', '8')">Verificar Respuesta</button>
+                <div id="resultado-q1" class="resultado-individual oculto"></div>
+            </div>
+
+            <div class="example">
+                <h3>Ejemplo 2</h3>
+                <p>¿Cuál es el patrón en la secuencia: 5, 10, 15, ...?</p>
+                <div class="options">
+                    <label><input type="radio" name="q2" value="Sumamos 5 en cada paso"> Sumamos 5 en cada paso</label>
+                    <label><input type="radio" name="q2" value="Sumamos 2 en cada paso"> Sumamos 2 en cada paso</label>
+                    <label><input type="radio" name="q2" value="Restamos 3 en cada paso"> Restamos 3 en cada paso</label>
+                </div>
+                <button type="button" onclick="verificarRespuesta('q2', 'Sumamos 5 en cada paso')">Verificar Respuesta</button>
+                <div id="resultado-q2" class="resultado-individual oculto"></div>
+            </div>
+        </section>
+
+        <section class="concept" id="comparaciones">
+            <h2>Comparaciones</h2>
+            <p>Las comparaciones son fundamentales en programación, ya que permiten evaluar relaciones entre números u objetos, lo que facilita la toma de decisiones en un algoritmo.</p>
+
+            <div class="example">
+                <h3>Ejemplo 1</h3>
+                <p>¿Cuál es mayor, 8 o 5?</p>
+                <div class="options">
+                    <label><input type="radio" name="q3" value="8"> 8</label>
+                    <label><input type="radio" name="q3" value="5"> 5</label>
+                    <label><input type="radio" name="q3" value="Iguales"> Iguales</label>
+                </div>
+                <button type="button" onclick="verificarRespuesta('q3', '8')">Verificar Respuesta</button>
+                <div id="resultado-q3" class="resultado-individual oculto"></div>
+            </div>
+
+            <div class="example">
+                <h3>Ejemplo 2</h3>
+                <p>¿Quién es mayor, Juan de 12 años o María de 14 años?</p>
+                <div class="options">
+                    <label><input type="radio" name="q4" value="Juan"> Juan</label>
+                    <label><input type="radio" name="q4" value="María"> María</label>
+                    <label><input type="radio" name="q4" value="Iguales"> Iguales</label>
+                </div>
+                <button type="button" onclick="verificarRespuesta('q4', 'María')">Verificar Respuesta</button>
+                <div id="resultado-q4" class="resultado-individual oculto"></div>
+            </div>
+        </section>
+
+        <section class="concept" id="condicionales">
+            <h2>Condicionales</h2>
+            <p>Las condicionales permiten que un programa tome decisiones según si se cumple o no una condición. Son muy útiles para desarrollar flujos lógicos en un algoritmo.</p>
+
+            <div class="example">
+                <h3>Ejemplo 1</h3>
+                <p>Si hace sol, ¿qué deberías llevar?</p>
+                <div class="options">
+                    <label><input type="radio" name="q5" value="Abrigo"> Abrigo</label>
+                    <label><input type="radio" name="q5" value="Sombrero"> Sombrero</label>
+                    <label><input type="radio" name="q5" value="Paraguas"> Paraguas</label>
+                </div>
+                <button type="button" onclick="verificarRespuesta('q5', 'Sombrero')">Verificar Respuesta</button>
+                <div id="resultado-q5" class="resultado-individual oculto"></div>
+            </div>
+
+            <div class="example">
+                <h3>Ejemplo 2</h3>
+                <p>Si tienes un jardín de 10 m² y un balcón de 5 m², ¿cuál es mayor?</p>
+                <div class="options">
+                    <label><input type="radio" name="q6" value="Jardín"> Jardín</label>
+                    <label><input type="radio" name="q6" value="Balcón"> Balcón</label>
+                    <label><input type="radio" name="q6" value="Iguales"> Iguales</label>
+                </div>
+                <button type="button" onclick="verificarRespuesta('q6', 'Jardín')">Verificar Respuesta</button>
+                <div id="resultado-q6" class="resultado-individual oculto"></div>
+            </div>
+        </section>
+
+        <button id="continuar"  onclick="window.location.href='../index.html'">Regresar</button>
+    </main>
+
+    <script src="../scripts.js"></script>
+</body>
+
+</html>

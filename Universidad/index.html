@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primaria - Lógica de Programación</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <main class="content-container">
+        <section class="introduction">
+            <h1>Lógica de Programación - Universidad</h1>
+            <p>Desafía los conceptos de la lógica de programación a través de calculadora interactiva, conversiones de números, análisis de texto y manejo de arreglos.</p>
+        </section>
+
+        <section class="concept" id="patronesyrepeticiones">
+            <h2>Calculadora Interactiva</h2>
+            <p>Una calculadora interactiva es una herramienta digital que permite a los usuarios realizar operaciones matemáticas básicas o avanzadas de manera rápida y dinámica. Mediante una interfaz intuitiva, el usuario puede ingresar valores y recibir resultados en tiempo real. En programación, desarrollar una calculadora interactiva es una excelente práctica para implementar funciones, manejar entradas del usuario y mostrar salidas claras, lo que contribuye a mejorar la experiencia del usuario y la funcionalidad del software.</p>
+
+            <div class="example">
+                <h3>Calculadora</h3>
+        <input type="number" id="num1" placeholder="Número 1">
+        <input type="number" id="num2" placeholder="Número 2">
+        <select id="operacion">
+            <option value="sumar">Sumar</option>
+            <option value="restar">Restar</option>
+            <option value="multiplicar">Multiplicar</option>
+            <option value="dividir">Dividir</option>
+        </select>
+        <button onclick="calcular()">Calcular</button>
+        <p id="resultado-calculadora"></p>
+    </div>
+
+    <script>
+        function verificarRespuesta(nombrePregunta, respuestaCorrecta) {
+            const opciones = document.getElementsByName(nombrePregunta);
+            let seleccion = "";
+            for (let opcion of opciones) {
+                if (opcion.checked) {
+                    seleccion = opcion.value;
+                    break;
+                }
+            }
+            const resultadoDiv = document.getElementById(`resultado-${nombrePregunta}`);
+            resultadoDiv.classList.remove("oculto");
+            resultadoDiv.textContent = seleccion === respuestaCorrecta ? "¡Correcto!" : "Incorrecto, intenta de nuevo.";
+        }
+
+        function calcular() {
+            const num1 = parseFloat(document.getElementById("num1").value);
+            const num2 = parseFloat(document.getElementById("num2").value);
+            const operacion = document.getElementById("operacion").value;
+            let resultado;
+
+            switch (operacion) {
+                case 'sumar':
+                    resultado = num1 + num2;
+                    break;
+                case 'restar':
+                    resultado = num1 - num2;
+                    break;
+                case 'multiplicar':
+                    resultado = num1 * num2;
+                    break;
+                case 'dividir':
+                    resultado = num2 !== 0 ? num1 / num2 : "No se puede dividir por cero";
+                    break;
+                default:
+                    resultado = "Operación no válida";
+            }
+            document.getElementById("resultado-calculadora").textContent = "Resultado: " + resultado;
+        }
+    </script>
+            </div>
+        </section>
+
+        <section class="concept" id="sumadenumerosnaturales">
+            <h2>Conversiones de Números</h2>
+            <p>Las conversiones de números consisten en transformar un valor numérico de un sistema de numeración a otro, como de decimal a binario, hexadecimal o viceversa. Este proceso es esencial en informática y programación, ya que permite la representación y el manejo de datos en diferentes formatos. Comprender y realizar conversiones de números facilita la interoperabilidad entre sistemas y optimiza el procesamiento de información a nivel de hardware y software..</p>
+
+            <div class="example">
+    <h3>Binario a Decimal</h3>
+    <input type="text" id="binario" placeholder="Número Binario">
+    <button onclick="binarioADecimal()">Convertir</button>
+    <p id="decimalResultado"></p>
+
+    <h3>Decimal a Binario</h3>
+    <input type="number" id="decimal" placeholder="Número Decimal">
+    <button onclick="decimalABinario()">Convertir</button>
+    <p id="binarioResultado"></p>
+
+    <script>
+        function binarioADecimal() {
+            const binario = document.getElementById("binario").value;
+            const decimal = parseInt(binario, 2);
+            document.getElementById("decimalResultado").textContent = "Decimal: " + (isNaN(decimal) ? "Error: Número no es correcto" : decimal);
+        }
+
+        function decimalABinario() {
+            const decimal = parseInt(document.getElementById("decimal").value);
+            const binario = decimal.toString(2);
+            document.getElementById("binarioResultado").textContent = "Binario: " + binario;
+        }
+    </script>
+            </div>
+        </section>
+
+        <section class="concept" id="factorialdeunnumero">
+            <h2>Análisis de Texto</h2>
+            <p>El análisis de texto es el proceso de examinar y descomponer el contenido escrito para extraer patrones, palabras clave, sentimientos o temas relevantes. En programación, el análisis de texto es fundamental para crear aplicaciones que puedan interpretar, clasificar o resumir grandes volúmenes de información, como en motores de búsqueda o asistentes virtuales. Aplicando algoritmos de procesamiento de lenguaje natural, los programas pueden transformar datos no estructurados en conocimientos útiles para la toma de decisiones.</p>
+
+            <div class="example">
+                <textarea id="texto" rows="4" cols="50" placeholder="Párrafo"></textarea>
+    <button onclick="analizarTexto()">Analizar</button>
+    <p id="analisisResultado"></p>
+
+    <script>
+        function analizarTexto() {
+            const texto = document.getElementById("texto").value;
+            const caracteres = texto.length;
+            const vocales = texto.match(/[aeiouáéíóúAEIOUÁÉÍÓÚ]/g)?.length || 0;
+            const signos = texto.match(/[.,!?;:]/g)?.length || 0;
+            const espacios = texto.match(/\s/g)?.length || 0;
+            const palabras = texto.split(/\s+/).filter(Boolean).length;
+            const digitos = texto.match(/\d/g)?.length || 0;
+
+            document.getElementById("analisisResultado").innerHTML = `
+                Caracteres: ${caracteres} <br>
+                Vocales: ${vocales} <br>
+                Signos: ${signos} <br>
+                Espacios: ${espacios} <br>
+                Palabras: ${palabras} <br>
+                Dígitos: ${digitos}
+            `;
+        }
+    </script>
+            </div>
+        </section>
+
+        <section class="concept" id="numerospareseimparesenunrango">
+            <h2>Manejo de Arreglos</h2>
+            <p>El manejo de arreglos implica trabajar con colecciones de datos organizadas de forma secuencial en un solo bloque, donde cada elemento se almacena en una posición específica. En programación, los arreglos son esenciales para almacenar, acceder y manipular conjuntos de datos de manera eficiente. Comprender cómo utilizar y optimizar el manejo de arreglos permite resolver problemas complejos mediante operaciones como la búsqueda, ordenamiento y modificación de datos dentro de estructuras ordenadas.</p>
+
+            <div class="example">
+                <p>¿Cuántos números pares hay entre 1 y 10?</p>
+                <input type="text" id="arreglo" placeholder="1,2">
+    <button onclick="procesarArreglo()">Procesar</button>
+    <p id="arregloResultado"></p>
+
+    <script>
+        function esPrimo(num) {
+            if (num < 2) return false;
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) return false;
+            }
+            return true;
+        }
+
+        function esPerfecto(num) {
+            let suma = 0;
+            for (let i = 1; i < num; i++) {
+                if (num % i === 0) suma += i;
+            }
+            return suma === num;
+        }
+
+        function moda(arr) {
+            const frecuencia = {};
+            let maxFrecuencia = 0;
+            let moda = null;
+
+            arr.forEach(num => {
+                frecuencia[num] = (frecuencia[num] || 0) + 1;
+                if (frecuencia[num] > maxFrecuencia) {
+                    maxFrecuencia = frecuencia[num];
+                    moda = num;
+                }
+            });
+
+            return moda;
+        }
+
+        function procesarArreglo() {
+            const arreglo = document.getElementById("arreglo").value.split(',').map(Number);
+            const primos = arreglo.filter(esPrimo);
+            const perfectos = arreglo.filter(esPerfecto);
+            const promedio = arreglo.length ? (arreglo.reduce((a, b) => a + b, 0) / arreglo.length) : 0;
+            const valorModa = moda(arreglo);
+
+            document.getElementById("arregloResultado").innerHTML = `
+                Primos: ${primos.length > 0 ? primos.join(', ') : 0} <br>
+                Perfectos: ${perfectos.length > 0 ? perfectos.join(', ') : 0} <br>
+                Promedio: ${promedio.toFixed(2)} <br>
+                Moda: ${valorModa !== null ? valorModa : 0}
+            `;
+        }
+    </script>
+</body>
+            </div>
+        </section>
+
+        <button id="continuar" onclick="window.location.href='../index.html'">Regresar</button>
+    </main>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>

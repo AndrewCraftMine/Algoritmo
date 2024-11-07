@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="styles-sn.css">
+</head>
+<body>
+    <header class="encabezado">
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo de UNEMI" class="logo">
+            <h1>Plataforma Interactiva de Lógica de Programación</h1>
+            <p>¡Aprende de manera divertida e interactiva!</p>
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="index.html">Niveles</a>
+                    <ul class="submenu">
+                        <li><a href="Primaria/index.html">Primaria</a></li>
+                        <li><a href="Secundaria/index.html">Secundaria</a></li>
+                        <li><a href="Universidad/index.html">Universidad</a></li>
+                    </ul>
+                </li>
+                <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+<main class="contenido-principal">
+    <div class="contact-container">
+        <h2>Contáctanos</h2>
+        <p>Déjanos un mensaje y nos pondremos en contacto contigo lo antes posible.</p>
+        <form class="contact-form" onsubmit="return enviarFormulario();">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" placeholder="Escribe tu nombre completo" required>
+    
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" placeholder="Escribe tu correo electrónico" required>
+    
+            <label for="message">Mensaje:</label>
+            <textarea id="message" name="message" placeholder="Escribe tu mensaje aquí" required></textarea>
+    
+            <button type="submit" class="submit-btn">Enviar</button>
+        </form>
+    </div>
+    <div id="feedback" class="feedback"></div>
+</main>
+    <footer>
+        <p>© 2024 Plataforma Interactiva de Lógica de Programación | Universidad Estatal de Milagro</p>
+    </footer>
+</body>
+</html>

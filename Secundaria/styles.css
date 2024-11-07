@@ -1,0 +1,150 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #003366 30%, #ff8c00 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #333;
+}
+
+.content-container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 900px;
+    animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+    color: #003366;
+    text-align: center;
+    font-size: 2.2em;
+    margin-bottom: 10px;
+}
+
+.introduction p {
+    font-size: 1.2em;
+    text-align: center;
+    color: #555;
+}
+
+h2 {
+    color: #003366;
+    font-size: 1.8em;
+    margin-top: 30px;
+    text-align: left;
+}
+
+h3 {
+    color: #ff8c00;
+    font-size: 1.2em;
+    margin: 15px 0 10px;
+}
+
+p {
+    line-height: 1.6;
+    font-size: 1.1em;
+}
+
+.example {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease;
+}
+
+.example:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.options {
+    margin-top: 10px;
+}
+
+.options label {
+    display: block;
+    padding: 10px;
+    margin: 8px 0;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.options label:hover {
+    background-color: #e9f5ff;
+    border-color: #003366;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background-color: #ff8c00;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #e07900;
+}
+
+.resultado-individual {
+    margin-top: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+    display: none;
+}
+
+label.correcto {
+    background-color: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+}
+
+label.incorrecto {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-color: #f5c6cb;
+}
+
+.oculto {
+    display: none;
+}
+
+#continuar {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #28a745;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#continuar:hover {
+    background-color: #218838;
+}
+
+.oculto {
+    display: none;
+}
